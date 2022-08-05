@@ -24,6 +24,20 @@
             }
         };
     }
+    // ================================= open small cart mobile nav
+    const openSmallCart = ((e) => {
+        // const cart = e.target.closest('header-mobile__cart');
+        // console.log(cart)
+        window.addEventListener('click', (e) => {
+            const cart = e.target.closest('.header-mobile__cart');
+            if (cart) {
+                cart.querySelector('.mobile__tooltip-cart').classList.replace('hidden', 'visibility');
+                allProducts.render_cart.call(allProducts, cart);
+            } else {
+                document.querySelector('.mobile__tooltip-cart').classList.replace('visibility', 'hidden');
+            }
+        });
+    })();
     // ================================================ SLIDER
     const slider = (() => {
         const arrImg = ['./image/slider8.jpg', './image/slider9.jpg', './image/slider4.jpg'];
@@ -219,7 +233,6 @@
                 colWidth = document.querySelector('.sec-best-sale .col').clientWidth;
                 numCol = Math.round(rowWidth / colWidth);
                 numHide = numProduct - numCol;
-                // allProducts.render_products.call(allProducts, bestSaleProducts, bestSaleInner);
                 // thay đổi index khi touch
                 if (x > numHide) {
                     index = numHide;
@@ -343,7 +356,7 @@
 
                 this.start(index);
                 window.onresize = () => {
-                    console.log('resize')
+                    // console.log('resize')
                     this.start(index)
                 };
                 this.mobile_touch();
@@ -694,22 +707,22 @@
                 numCart[1].innerHTML = Storage_cart_length;
             },
             // render small cart
-            render_cart() {
-                let proList = document.querySelector('.product-list');
-                let totalPay = document.querySelector('.tolal-pay');
+            render_cart(ele = document) {
+                let proList = ele.querySelector('.product-list');
+                let totalPay = ele.querySelector('.tolal-pay');
                 let proItem, total = 0,
                     quatity, price, saleOff;
                 let keyCart = this.createLocalStorage('cart');
                 let arrKey = Object.keys(keyCart.getStore());
                 // nếu k có sản phẩm nào trong cart thì hiện không có sản phẩm
                 if (arrKey.length == 0) {
-                    document.querySelector('.noproduct').classList.add('selected');
-                    document.querySelector('.hasproduct').classList.remove('selected');
+                    ele.querySelector('.noproduct').classList.add('selected');
+                    ele.querySelector('.hasproduct').classList.remove('selected');
                     return;
                 }
                 if (arrKey.length != 0) {
-                    document.querySelector('.noproduct').classList.remove('selected');
-                    document.querySelector('.hasproduct').classList.add('selected');
+                    ele.querySelector('.noproduct').classList.remove('selected');
+                    ele.querySelector('.hasproduct').classList.add('selected');
                 }
                 proList.innerHTML = '';
                 for (let i = 0; i <= arrKey.length - 1; i++) {
@@ -734,7 +747,7 @@
                                     </div>
                                 </div>
                                 <div class="product-item__remove  text-gray" data-index='${keyCart.get(arrKey[i]).id_product}'>
-                                    &times;
+                                    <span class=".remove">&times;</span>
                                 </div>
                             </div>                    
                             `
