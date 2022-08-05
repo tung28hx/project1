@@ -1382,6 +1382,9 @@ footer>.d-flex {
     .header-mobile {
         display: flex;
     }
+    .header-mobile__cart .number-product {
+        opacity: 1;
+    }
     .header-mobile__cart {
         margin: 0 25px 0 0;
     }
