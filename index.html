@@ -60,7 +60,6 @@
                                     </div>
                                     <div class="hasproduct d-flex selected hide">
                                         <div class="product-list">
-
                                         </div>
                                         <div class="total-price text-center">
                                             <div>Tổng thanh toán:</div>
@@ -105,6 +104,28 @@
             <div class="header-mobile__cart text-white">
                 <div class="cart-icon"><i class="fa-solid fa-cart-plus"></i></div>
                 <span class="number-product num-cart">0</span>
+                <!-- Tool tip -->
+                <div class="mobile__tooltip-cart hidden">
+                    <div class="tooltip-cart__inner">
+                        <div class="noproduct text-black hide">
+                            <p>chưa có sản phẩm trong giỏ hàng</p>
+                        </div>
+                        <div class="hasproduct d-flex selected hide">
+                            <div class="product-list">
+                            </div>
+                            <div class="total-price text-center">
+                                <div>Tổng thanh toán:</div>
+                                <div class="tolal-pay text-black format-price"></div>
+                            </div>
+                            <div>
+                                <button class="btn__view-cart text-white">XEM GIỎ HÀNG</button>
+                            </div>
+                            <div>
+                                <button class="btn__view-pay text-white"> THANH TOÁN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="over-lay">
@@ -335,12 +356,9 @@
                     <p class="footer__app--logo">
                         <a href="#"><img src="./image/LOGO2.jpg" alt=""></a>
                     </p>
-
                 </div>
             </div>
         </footer>
-
-
         <script src="./main_5_8.js">
         </script>
     </body>
