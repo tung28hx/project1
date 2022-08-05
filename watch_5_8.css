@@ -505,11 +505,13 @@ img {
     top: 0;
     right: 20px;
     font-size: 50px;
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
 }
 
 .over-lay.change .close {
     animation: closeToTop 0.4s ease-out forwards;
+    display: block;
 }
 
 @keyframes closeToTop {
@@ -1382,9 +1384,6 @@ footer>.d-flex {
     .header-mobile {
         display: flex;
     }
-    .header-mobile__cart .number-product {
-        opacity: 1;
-    }
     .header-mobile__cart {
         margin: 0 25px 0 0;
     }
@@ -1405,6 +1404,9 @@ footer>.d-flex {
     h4 {
         font-size: 16px !important;
         margin: 10px 0 !important;
+    }
+    .header-mobile__cart .number-product {
+        opacity: 1;
     }
     /* slider */
     .slide-text p.text__des,
