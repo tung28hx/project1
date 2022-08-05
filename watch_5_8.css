@@ -227,7 +227,8 @@ img {
 
 /* =============TOOLTIP CART */
 
-.product--cart .tooltip-cart {
+.product--cart .tooltip-cart,
+.mobile__tooltip-cart {
     transform: scale(0);
     position: absolute;
     top: 150%;
@@ -235,15 +236,22 @@ img {
     background-color: white;
     width: 300px;
     z-index: 2;
+    transition: transform 0.4s ease;
 }
 
-.product--cart:hover .tooltip-cart {
-    transition: transform 0.4s ease;
+.product--cart:hover .tooltip-cart,
+.mobile__tooltip-cart.visibility {
     transform: scale(1);
     transform-origin: right top;
 }
 
-.product--cart .tooltip-cart::before {
+.mobile__tooltip-cart.hidden {
+    transform: scale(0);
+    transform-origin: right top;
+}
+
+.product--cart .tooltip-cart::before,
+.mobile__tooltip-cart::before {
     content: '';
     position: absolute;
     top: -25px;
@@ -305,16 +313,27 @@ img {
     font-weight: bold;
 }
 
+
+/* đặt kích thước to để khi ấn vào ko cần trúng tâm vân được */
+
 .product-item__remove {
-    font-size: 16px;
-    border: 1px solid gray;
-    border-radius: 50%;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
-    transition: all 0.3s ease;
-    width: 28px;
+    /* border: 1px solid red; */
+}
+
+.product-item__remove span {
+    width: 25px;
     height: 25px;
+    display: inline-block;
+    border: 1px solid gray;
+    text-align: center;
     line-height: 25px;
-    margin-right: 5px;
+    border-radius: 50%;
+    font-size: 16px;
 }
 
 .product-item__remove:hover {
