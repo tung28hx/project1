@@ -404,6 +404,20 @@ img {
 }
 
 /* ================phone icon =================*/
+.div1{
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #594406;
+    padding: 15px;
+    margin-left: 16px;
+    border-radius: 50%;
+    animation: scaleW 1s ease infinite;
+
+}
 .phone-icon {
     position: fixed;
     left: 0;
@@ -411,11 +425,8 @@ img {
     z-index: 2;
     width: 100px;
     height: 100px;
-    /* background-color: blue; */
-    border: 2px solid blue;
     margin-left: 16px;
     border-radius: 50%;
-    animation: scaleW 1s ease infinite;
 }
 @keyframes scaleW{
     0%{
@@ -425,18 +436,27 @@ img {
         transform: scale(1)
     }
 }
-.div2{
-    background: red;
+.div{
+    background: #594406;
     width: 70px;
     height: 70px;
     position: absolute;
-    left: 13px;
-    top: 13px;
+    left: 15px;
+    top: 15px;
     border-radius: 50%;
+}
+.div2{
+    background: #594406;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 50%;
+    animation: scaleW 1s ease infinite;
+
 }
 .div2 i{
     color: white;
-    background: black;
+    background: #cc9a00;
     width: 50px;
     height: 50px;
     position: absolute;
@@ -452,10 +472,10 @@ img {
         transform: rotate(0);
     }
     50%{
-        transform: rotate(5deg);
+        transform: rotate(10deg);
     }
     100%{
-        transform: rotate(-5deg);
+        transform: rotate(-10deg);
     }
 }
 
