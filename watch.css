@@ -1606,4 +1606,8 @@ footer>.d-flex {
         height: 25px;
         line-height: 25px;
     }
+     /* heart */
+    .sale-heart {
+        opacity: 1 !important;
+    }
 }
