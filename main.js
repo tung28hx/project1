@@ -805,29 +805,52 @@
         let allProduct_content, allProduct_offsetTop;
         // BLOGS
         let blog_content, blog_offsetTop;
-        setTimeout(() => {
-            // TREND 1
-            sec_trend = document.querySelector('.sec-trend');
-            trend_male = document.querySelector('.trend__male');
-            trend_female = document.querySelector('.trend__female');
-            trend__offsetTop = sec_trend.offsetTop;
-            // BEST SALE
-            bestSale_content = document.querySelector('.sec-best-sale');
-            bestSale_offsetTop = bestSale_content.offsetTop;
-            // TREND2
-            trend__classic_modern = document.querySelectorAll('.sec-trend')[1];
-            trend__classic_modern_offsetTop = trend__classic_modern.offsetTop;
-            trend_classic = document.querySelector('.trend__classic');
-            trend_modern = document.querySelector('.trend__modern');
-            // ALL PRODUCTS
-            allProduct_content = document.querySelector('.sec-all-product');
-            allProduct_offsetTop = allProduct_content.offsetTop;
-            // BLOGS
-            blog_content = document.querySelector('.sec-blog');
-            blog_offsetTop = blog_content.offsetTop;
-
-        }, 1000);
-
+        let objOffsetTop = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // TREND 1
+                sec_trend = document.querySelector('.sec-trend');
+                trend_male = document.querySelector('.trend__male');
+                trend_female = document.querySelector('.trend__female');
+                trend__offsetTop = sec_trend.offsetTop;
+                // BEST SALE
+                bestSale_content = document.querySelector('.sec-best-sale');
+                bestSale_offsetTop = bestSale_content.offsetTop;
+                // TREND2
+                trend__classic_modern = document.querySelectorAll('.sec-trend')[1];
+                trend__classic_modern_offsetTop = trend__classic_modern.offsetTop;
+                trend_classic = document.querySelector('.trend__classic');
+                trend_modern = document.querySelector('.trend__modern');
+                // ALL PRODUCTS
+                allProduct_content = document.querySelector('.sec-all-product');
+                allProduct_offsetTop = allProduct_content.offsetTop;
+                // BLOGS
+                blog_content = document.querySelector('.sec-blog');
+                blog_offsetTop = blog_content.offsetTop;
+                resolve({
+                    trend__offsetTop,
+                    bestSale_offsetTop,
+                    trend__classic_modern_offsetTop,
+                    allProduct_offsetTop,
+                    blog_offsetTop
+                });
+            }, 500);
+        });
+        // dùng promise để kiểm tra so sánh giữa browser height vs offsetTop để visibility
+        objOffsetTop
+            .then(function(objDataOffset) {
+                for (x in objDataOffset) {
+                    if (objDataOffset[x] <= browser_clientHeight) {
+                        // console.log(x, objDataOffset[x])
+                        if (x == 'trend__offsetTop') {
+                            trend_male.parentElement.classList.add('trend__male--animate');
+                            trend_female.parentElement.classList.add('trend__female--animate');
+                        }
+                        if (x == 'bestSale_offsetTop') {
+                            bestSale_content.classList.add('bese-sale--animate');
+                        }
+                    }
+                }
+            });
         return window.onscroll = () => {
             // MENU FIXED
             if (window.pageYOffset >= header_desktop_offsetTop + header_desktop_height) {
