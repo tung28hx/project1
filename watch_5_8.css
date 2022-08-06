@@ -413,7 +413,7 @@ img {
     height: 100px;
     border: 2px solid #ebd699;
     padding: 15px;
-    margin-left: 16px;
+/*     margin-left: 16px; */
     border-radius: 50%;
     display:none;
     animation: scaleW 1s ease infinite;
@@ -426,7 +426,7 @@ img {
     z-index: 2;
     width: 100px;
     height: 100px;
-    margin-left: 16px;
+/*     margin-left: 16px; */
     border-radius: 50%;
     cursor:pointer;
     display:none;
