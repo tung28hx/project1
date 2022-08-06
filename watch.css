@@ -405,9 +405,11 @@ img {
 
 
 /* ============== HOTLINE====================== */
+
 .connect-hotline {
     display: none;
 }
+
 .hotline {
     position: fixed;
     left: 0px;
@@ -618,31 +620,6 @@ img {
     bottom: 0;
 }
 
-.over-lay .close {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    font-size: 50px;
-    /* opacity: 0; */
-    display: none;
-}
-
-.over-lay.change .close {
-    animation: closeToTop 0.4s ease-out forwards;
-    display: block;
-}
-
-@keyframes closeToTop {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .header-mobile__nav {
     position: fixed;
     top: 0;
@@ -658,6 +635,30 @@ img {
 
 .header-mobile__nav.change {
     width: 250px;
+}
+
+.header-mobile__nav .nav-bar {
+    list-style-type: none;
+}
+
+.nav-bar .close {
+    position: absolute;
+    top: -10px;
+    right: 5px;
+    padding: 0 10px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease 0.3s;
+    color: #828282;
+    opacity: 0;
+}
+
+.header-mobile__nav.change .close {
+    opacity: 1;
+}
+
+.nav-bar .close:hover {
+    font-size: 50px;
 }
 
 .header-mobile__nav .nav-search {
