@@ -405,7 +405,9 @@ img {
 
 
 /* ============== HOTLINE====================== */
-
+.connect-hotline{
+    display:none;   
+}
 .hotline {
     position: fixed;
     left: 0px;
@@ -1529,6 +1531,10 @@ footer>.d-flex {
     .slide-content .slide-btn {
         font-size: 12px;
         margin: 5px 0 !important;
+    }
+    /* hot line */
+    .connect-hotline {
+        display: block;
     }
     /* sec trend */
     .sec-trend .trend__text {
