@@ -415,6 +415,7 @@ img {
     padding: 15px;
     margin-left: 16px;
     border-radius: 50%;
+    display:none;
     animation: scaleW 1s ease infinite;
 
 }
@@ -446,7 +447,7 @@ img {
     left: 15px;
     top: 15px;
     border-radius: 50%;
-    display:none;
+    
 }
 .div2{
     background: #594406;
@@ -481,14 +482,6 @@ img {
         transform: rotate(-10deg);
     }
 }
-
-
-
-
-
-
-
-
 
 @keyframes zoomIn-call {
     0% {
@@ -1556,7 +1549,7 @@ footer>.d-flex {
         margin: 5px 0 !important;
     }
     /*  PHONE ICON    */
-    .div,
+    .div1,
     .phone-icon{
         display:block;   
     }
