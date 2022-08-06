@@ -650,7 +650,6 @@ img {
     background-color: rgba(255, 255, 255, 0.95);
     z-index: 3;
     max-width: 100%;
-    padding: 0 8px;
     width: 0px;
     overflow: hidden;
     transition: width 0.4s ease;
