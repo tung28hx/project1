@@ -427,6 +427,8 @@ img {
     height: 100px;
     margin-left: 16px;
     border-radius: 50%;
+    cursor:poiter;
+    display:none;
 }
 @keyframes scaleW{
     0%{
@@ -444,6 +446,7 @@ img {
     left: 15px;
     top: 15px;
     border-radius: 50%;
+    display:none;
 }
 .div2{
     background: #594406;
@@ -1553,7 +1556,8 @@ footer>.d-flex {
         margin: 5px 0 !important;
     }
     /*  PHONE ICON    */
-    .div,.phone-icon{
+    .div,
+    .phone-icon{
         display:block;   
     }
     /* sec trend */
