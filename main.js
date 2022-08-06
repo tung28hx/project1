@@ -1,7 +1,7 @@
     // DESKTEP NAV
     const desktop_nav = (() => {
         window.addEventListener('click', (e) => {
-            const nav_item = e.target.closest('.nav-item');
+            const nav_item = e.target.closest('.header-desktop__nav .nav-item');
             if (nav_item) {
                 const nav_list = document.querySelector('.header-desktop__nav .nav-list');
                 nav_list.querySelector('.active').classList.remove('active');
@@ -11,18 +11,27 @@
     })();
     //=================================================show mobile nav
     function openMobileNav(x) {
+        const headerMobile = document.querySelector('.header-mobile__nav');
+        const overLay = document.querySelector('.over-lay');
         x.classList.toggle("change");
-        document.querySelector('.over-lay').classList.toggle("change");
-        document.querySelector('.header-mobile__nav').classList.toggle("change");
+        overLay.classList.toggle("change");
+        headerMobile.classList.toggle("change");
         // close mobile nav
-        return window.onclick = function(e) {
-            const changes = document.querySelectorAll('.change');
-            if (e.target.closest('.over-lay')) {
+        window.onclick = function(e) {
+            if (e.target.closest('.over-lay') || e.target.closest('.header-mobile__nav .close')) {
+                const changes = document.querySelectorAll('.change');
                 for (let i = 0; i <= changes.length - 1; i++) {
                     changes[i].classList.toggle('change');
                 }
             }
         };
+        // ngăn không cho kéo khi đang mở mobile nav
+        overLay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        });
+        headerMobile.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        });
     }
     // ================================= open small cart mobile nav
     const openSmallCart = ((e) => {
@@ -249,7 +258,6 @@
 
                 bestSaleInner.addEventListener('mousedown', (e) => {
                     let image = e.target.closest('.best-sale__product-bg');
-                    // e.stopPropagation();
                     if (image) {
                         // ngăn k cho kéo ảnh trên window
                         // console.log(image)
@@ -316,6 +324,7 @@
             mobile_touch() {
                 itemCol = document.querySelectorAll('.best-sale__inner .item');
                 let x1, x2, x, z, colW = itemCol[0].clientWidth;
+
                 bestSaleInner.ontouchstart = (e) => {
                     x1 = e.touches[0].clientX;
                     // console.log('x1 touch start', x1)
@@ -324,6 +333,7 @@
                 }
                 bestSaleInner.ontouchmove = (e) => {
                     x2 = e.touches[0].clientX;
+                    // console.log(x)
                     x = x2 - x1;
                     if (x) {
                         // transform trong khi vuốt
