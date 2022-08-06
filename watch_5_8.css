@@ -1552,7 +1552,10 @@ footer>.d-flex {
         font-size: 12px;
         margin: 5px 0 !important;
     }
-
+    /*  PHONE ICON    */
+    .div,.phone-icon{
+        display:block;   
+    }
     /* sec trend */
     .sec-trend .trend__text {
         width: 70%;
