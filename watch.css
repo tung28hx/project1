@@ -405,8 +405,8 @@ img {
 
 
 /* ============== HOTLINE====================== */
-.connect-hotline{
-    display:none;   
+.connect-hotline {
+    display: none;
 }
 .hotline {
     position: fixed;
