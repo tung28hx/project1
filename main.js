@@ -35,14 +35,16 @@
     }
     // ================================= open small cart mobile nav
     const openSmallCart = ((e) => {
-        // const cart = e.target.closest('header-mobile__cart');
-        // console.log(cart)
         window.addEventListener('click', (e) => {
             const cart = e.target.closest('.header-mobile__cart');
             if (cart) {
-                cart.querySelector('.mobile__tooltip-cart').classList.replace('hidden', 'visibility');
+                cart.querySelector('.mobile__tooltip-cart').classList.add('visibility');
+                document.querySelector('.mobile__tooltip-cart').classList.remove('hidden');
+
             } else {
-                document.querySelector('.mobile__tooltip-cart').classList.replace('visibility', 'hidden');
+                document.querySelector('.mobile__tooltip-cart').classList.add('hidden');
+                document.querySelector('.mobile__tooltip-cart').classList.remove('visibility');
+
             }
         });
     })();
