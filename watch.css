@@ -243,11 +243,13 @@ img {
 .mobile__tooltip-cart.visibility {
     transform: scale(1);
     transform-origin: right top;
+    opacity:1;
 }
 
 .mobile__tooltip-cart.hidden {
     transform: scale(0);
     transform-origin: right top;
+    opacity:0;
 }
 
 .product--cart .tooltip-cart::before,
