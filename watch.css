@@ -1170,6 +1170,7 @@ img {
     /* transition: transform 0.3s ease; */
     /* transform: scale(1);  */
     display: block;
+    animation: zoom-out 0.3s ease forwards;
 }
 
 .zoom-in {
